@@ -35,7 +35,7 @@ const textToSpeech = async (key, region, text, filename)=> {
 
 async function fetchAudio(req, res, next) {
     const fileName = `${path.join(__dirname, '..', "audio/")}${req.details.product_name}.mp3`
-    const subscriptionKey = ""; // removed key due to security reason. Will be sent on request. 
+    const subscriptionKey = ""; // removed azure key due to security reason. Will be sent on request. 
     const serviceRegion = "eastus";
     const text = req.text;
     const audio = await textToSpeech(subscriptionKey, serviceRegion, text, fileName);
